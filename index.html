@@ -3,36 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Blog</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <title>Zhen's Page</title>
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
     <header>
-        <h1>Welcome to My Blog!</h1>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="/pages/blog.html">Blog</a></li>
+                <li><a href="/pages/edcuation.html">Education</a></li>
+                <li><a href="/pages/experience.html">Experience</a></li>
+                <li><a href="/pages/contact.html">Contact</a></li>
             </ul>
         </nav>
+            <h1>Welcome to Zhen's Personal Page</h1>
+            <p>Sharing insights, creativity, and inspiration.</p>
     </header>
-
-    <section id="blog-posts">
-        <article>
-            <h2>First Blog Post</h2>
-            <p>This is my first blog post. Welcome to my blog!</p>
-            <a href="post1.html">Read more</a>
-        </article>
-        <article>
-            <h2>Second Blog Post</h2>
-            <p>Here's another post. Stay tuned for more updates!</p>
-            <a href="post2.html">Read more</a>
-        </article>
-    </section>
-
+    <main>
+        <section id="home">
+            <header>
+                <h1>Welcome to My Blog</h1>
+                <p>Explore my thoughts, experiences, and a collection of beautiful photos.</p>
+            </header>
+            
+    
+            <section id="gallery" class="container">
+                <h2>Photo Gallery</h2>
+                <div id="image-grid" class="image-grid"></div> <!-- Images will be dynamically loaded here -->
+                <button href="/pages/blog.html" class="view-more-btn" id="view-more-button">View More</button>
+            </section>
+        
+            
+            <section id="blog" class="container">
+                <h2>Latest Blog Posts</h2>
+                <ul id="feed-list"></ul>
+                <a href="/pages/blog.html" id="read-more-link">Read More on Blog</a>
+            </section>
+            
+        </section>
+    </main>
     <footer>
-        <p>&copy; 2024 My Blog | All rights reserved</p>
+        <p>© 2024 Zhen's page. All rights reserved.</p>
     </footer>
+    <div id="google_translate_element"></div>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+          new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'en,zh-CN'}, 'google_translate_element');
+        }
+      </script>
+      <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+      <script src="/js/index_feed_reader.js"></script>
+    
+    
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
